@@ -1,0 +1,45 @@
+<!--
+<ion-view view-title="Generos musicales">
+  <ion-content>
+    <div class="list card">
+
+      <a href="#" class="item item-icon-left">
+        <i class="icon ion-home"></i>
+        Enter home address
+      </a>
+
+      <a href="#" class="item item-icon-left">
+        <i class="icon ion-ios-telephone"></i>
+        Enter phone number
+      </a>
+
+      <a href="#" class="item item-icon-left">
+        <i class="icon ion-wifi"></i>
+        Enter wireless password
+      </a>
+
+      <a href="#" class="item item-icon-left">
+        <i class="icon ion-card"></i>
+        Enter card information
+      </a>
+
+    </div>
+  </ion-content>
+</ion-view>
+-->
+
+
+<ion-view view-title="Generos musicales">
+  <ion-content>
+
+    <div ng-if="!ready" class="spinner">
+      <ion-spinner></ion-spinner>
+    </div>
+
+    <ion-list ng-if="ready">
+      <ion-item tpe="item-text-wrap" ng-repeat="gender in genders">
+        {{gender.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,6 +1,30 @@
-angular.module('starter.controllers', [])
+angular.module('music.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
+
+.controller('GenderCtrl', function($scope, GenderFactory) {
+
+  GenderFactory.list().then(function(res) {
+    $scope.ready = false;
+    $scope.genders = res.data;
+    $scope.ready = true;
+  },
+  function(err){
+    $scope.error = true;
+  });
+})
+
+.controller('ArtistCtrl', function($scope, ArtistFactory) {
+
+  ArtistFactory.list().then(function(res) {
+    $scope.ready = false;
+    $scope.genders = res.data;
+    $scope.ready = true;
+  },
+  function(err){
+    $scope.error = true;
+  });
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called

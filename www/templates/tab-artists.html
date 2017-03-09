@@ -1,0 +1,14 @@
+<ion-view view-title="Generos musicales">
+  <ion-content>
+
+    <div ng-if="!ready" class="spinner">
+      <ion-spinner></ion-spinner>
+    </div>
+
+    <ion-list ng-if="ready">
+      <ion-item tpe="item-text-wrap" ng-repeat="gender in genders">
+        {{gender.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
