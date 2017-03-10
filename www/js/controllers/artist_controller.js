@@ -10,6 +10,6 @@ function ArtistCtrl($scope, ArtistFactory){
     $scope.ready = true;
   },
   function(err){
-    $scope.error = true;
+    $scope.error = true; 
   });		
 };

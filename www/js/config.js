@@ -4,7 +4,8 @@ angular
 
 function run($ionicPlatform,$rootScope) {
 
-  $rootScope.urlBackend = 'https://music-back.herokuapp.com/';
+  // URL para llamadas a los servicios RESTful
+  $rootScope.urlBackend = 'http://music.back:8000/';
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
