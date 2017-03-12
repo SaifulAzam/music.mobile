@@ -1,25 +1,5 @@
 angular.module('music.services', [])
 
-.factory('Chats', function() {  
-
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
-    }
-  };
-})
-
 .factory('GenderFactory', function($http,$rootScope) {
 
   return {
@@ -41,6 +21,19 @@ angular.module('music.services', [])
       return $http({
         method: 'GET',
         url: $rootScope.urlBackend+'api/v1/artists'
+      });
+    }
+  };
+})
+
+.factory('AlbumFactory', function($http,$rootScope) {
+
+  return {
+    list: function() {
+
+      return $http({
+        method: 'GET',
+        url: $rootScope.urlBackend+'api/v1/albums'
       });
     }
   };
